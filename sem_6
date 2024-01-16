@@ -1,0 +1,109 @@
+# #3
+# from string import digits
+# spisok = ['input', 'repeat', 'output', 'string', 3]
+# if 'repeat' in spisok and str(spisok[-1]) in digits:
+#     repeater = spisok[-1]
+#     spisok.remove('repeat')
+#     spisok.remove(spisok[-1])
+#     print(spisok*repeater)
+# else:
+#     pass
+# #2.1
+# spisok = []
+# stroke = input('Введите любые значения:')
+# for i in range(len(stroke)):
+#     spisok.append(stroke[i])
+# print(spisok)
+# spisok, i = [], 0
+# stroke = input('Введите любые значения:')
+# while i != len(stroke):
+#     spisok.append(stroke[i])
+#     i += 1
+# print(spisok)
+# #2.2
+# import re
+# stroke = input('Введите предложение:')
+# words = re.findall(r'\b[a-zA-Z]+\b',stroke)
+# print(words)
+# #2.3
+# import re
+# stroke = input('Введите предложение:')
+# words = re.findall(r'[0-9]{1}',stroke)
+# print(words)
+# #5.1
+# nums = []
+# def sequence(max_val):
+#     nums.append(max_val)
+#     if max_val<=1:
+#         return nums[::-1]
+#     return sequence(max_val-1)
+# max_val = int(input('Введите максимальное число последовательности:'))
+# repeat = int(input('Введите число повторов последовательности:'))
+# print(sequence(max_val)*repeat)
+# #5.2 !!!!
+# nums = []
+# def sequence(max_val):
+#     nums.append(max_val)
+#     if max_val<=1:
+#         return nums[::-1]
+#     return sequence(max_val-1)
+# max_val = int(input('Введите максимальное число последовательности:'))
+# repeat = int(input('Введите число повторов последовательности:'))
+# numbers = sequence(max_val)*repeat
+# answer = []
+# answer = numbers[:repeat]
+# answer.append(numbers[10*repeat-repeat:])
+# print(answer)
+# #6
+# letters = []
+# stroke = input('Введите произвольную строку:')
+# for i in range(len(stroke)-1):
+#     if (stroke[i] == 's' or stroke[i] == 'S') and i != 0:
+#         letters.append(stroke[i-1]*2+stroke[i+1])
+#     else:
+#         letters.append(stroke[i])
+# letters.append(stroke[-1])
+# print(letters)
+# #8
+# import re
+# final_stroke = ''
+# first_stroke = input('Введите первую строку:')
+# second_stroke = input('Введите вторую строку:')
+# first_sp = re.findall(r'\b[a-zA-Z]+\b',first_stroke)
+# second_sp = re.findall(r'\b[a-zA-Z]+\b',second_stroke)
+# for i in range(len(first_sp)):
+#     final_stroke += ' '
+#     final_stroke += first_sp[i]
+#     final_stroke += ' '
+#     final_stroke += second_sp[i]
+# print(final_stroke)
+# #9
+# import re
+# final_stroke = ''
+# first_stroke = input('Введите первую строку:')
+# second_stroke = input('Введите вторую строку:')
+# first_sp = re.findall(r'\b[a-zA-Z]+\b',first_stroke)
+# second_sp = re.findall(r'\b[a-zA-Z]+\b',second_stroke)
+# zipped = zip(first_sp,second_sp)
+# listed = list(zipped)
+# for kortej in listed:
+#     x, y = kortej
+#     final_stroke+=x+' '
+#     final_stroke+=y+' '
+# print(final_stroke)
+#11
+def simple(num):
+    factors, divider,sequence = [], 2, []
+    while num != 1:
+        if num % divider == 0:
+            num //= divider
+            factors.append(divider)
+        if num % divider != 0:
+            divider += 1
+    return factors
+print(simple(12))
+spisok = []
+for i in range(1,21):
+    if len(simple(i)) == 1:
+        spisok.append(i)
+    else:
