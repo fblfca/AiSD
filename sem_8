@@ -1,0 +1,156 @@
+# #1
+# def multiplication(multipliers):
+#     answer = multipliers[0] * multipliers[1]
+#     del multipliers[0]
+#     multipliers[0] = answer
+#     if len(multipliers) == 1:
+#         return multipliers[0]
+#     return multiplication(multipliers)
+# multipliers = list(map(int, input('Введите множители через пробел:').split()))
+# print(multiplication(multipliers))
+# #8
+# nums = {
+#     'один': 1,
+#     'два': 2,
+#     'три': 3,
+#     'четыре': 4,
+#     'пять': 5,
+#     'шесть': 6,
+#     'семь': 7,
+#     'восемь': 8,
+#     'девять': 9,
+#     'десять': 10,
+#     'одиннадцать': 11,
+#     'двенадцать': 12,
+#     'тринадцать': 13,
+#     'четырнадцать': 14,
+#     'пятнадцать': 15,
+#     'шестнадцать': 16,
+#     'семнадцать': 17,
+#     'восемьнадцать': 18,
+#     'девятнадцать': 19,
+#     'двадцать': 20,
+#     'тридцать': 30,
+#     'сорок': 40,
+#     'пятьдесят': 50,
+#     'шестьдесят': 60,
+#     'семьдесят': 70,
+#     'восемьдесят': 80,
+#     'девяносто': 90,
+#     'сто': 100,
+#     'двести': 200,
+#     'триста': 300,
+#     'четыреста': 400,
+#     'пятьсот': 500,
+#     'шестьсот': 600,
+#     'семьсот': 700,
+#     'восемьсот': 800,
+#     'девятьсот': 900,
+#     'одна тысяча': 1000,
+#     'две тысячи': 2000,
+#     'три тысячи': 3000,
+#     'четыре тысячи': 4000,
+#     'пять тысяч': 5000,
+#     'шесть тысяч': 6000,
+#     'семь тысяч': 7000,
+#     'восемь тысяч': 8000,
+#     'девять тысяч': 9000
+# }
+# def interpritation(answer):         #функция для перевода числового значения в разбиение его по разрядам
+#     parts, counter = [], 0
+#     if str(answer)[0] == '-':       #проверка на отрицательное значение ответа, дабы вернуть корректный ответ
+#         counter += 1
+#         parts.append('-')
+#         answer -= (2 * answer)
+#     lenght = len(str(answer))
+#     while lenght != 0:
+#         if lenght == 2 and str(answer)[-2] == '1':
+#             parts.append(int(str(answer)[len(str(answer)) - lenght]) * (10 ** (lenght - 1)) + (int(str(answer)[len(str(answer)) - lenght+1]) * (10 ** (lenght - 2))))
+#             return parts    #проверка на числа от 11 до 19, которые в русском языке записываются по другим правилам относительно остальных чисел
+#         parts.append(int(str(answer)[len(str(answer)) - lenght]) * (10 ** (lenght - 1)))
+#         lenght -= 1
+#     return parts
+# answer = int(input())
+# def get_key(parts):             #функция для возврата ключа словаря по его значению
+#     answer_stroke = ''
+#     for i in parts:
+#         for j, v in nums.items():
+#             if i == v:
+#                 answer_stroke += j + ' '
+#     return answer_stroke
+# print(get_key(interpritation(answer)))
+# #9
+# nums = {
+#     'один': 1,
+#     'два': 2,
+#     'три': 3,
+#     'четыре': 4,
+#     'пять': 5,
+#     'шесть': 6,
+#     'семь': 7,
+#     'восемь': 8,
+#     'девять': 9,
+#     'десять': 10,
+#     'одиннадцать': 11,
+#     'двенадцать': 12,
+#     'тринадцать': 13,
+#     'четырнадцать': 14,
+#     'пятнадцать': 15,
+#     'шестнадцать': 16,
+#     'семнадцать': 17,
+#     'восемьнадцать': 18,
+#     'девятнадцать': 19,
+#     'двадцать': 20,
+#     'тридцать': 30,
+#     'сорок': 40,
+#     'пятьдесят': 50,
+#     'шестьдесят': 60,
+#     'семьдесят': 70,
+#     'восемьдесят': 80,
+#     'девяносто': 90,
+#     'сто': 100,
+#     'двести': 200,
+#     'триста': 300,
+#     'четыреста': 400,
+#     'пятьсот': 500,
+#     'шестьсот': 600,
+#     'семьсот': 700,
+#     'восемьсот': 800,
+#     'девятьсот': 900,
+#     'одна тысяча': 1000,
+#     'две тысячи': 2000,
+#     'три тысячи': 3000,
+#     'четыре тысячи': 4000,
+#     'пять тысяч': 5000,
+#     'шесть тысяч': 6000,
+#     'семь тысяч': 7000,
+#     'восемь тысяч': 8000,
+#     'девять тысяч': 9000
+# }
+# answer = 0
+# ur_num = input('Введите число:').split()
+# for i in ur_num:
+#     answer += nums.get(i)
+# print(answer)
+# #5
+# def calc(equation):
+#     for i in equation:
+#         if not i.isdigit():
+#             first_num = int(equation[:equation.index(i)])
+#             second_num = int(equation[equation.index(i)+1:])
+#             if i == '-':
+#                 return first_num - second_num
+#             if i == '+':
+#                 return first_num + second_num
+#             if i == '*':
+#                 return first_num * second_num
+#             if i == '/':
+#                 return first_num // second_num
+#             if i == '%':
+#                 return first_num % second_num
+#             if i == '^':
+#                 return first_num ** second_num
+#     return 'неизвестная операция'
+# equation = input()
+# print(calc(equation))
+
