@@ -1,0 +1,90 @@
+# #1
+# dict_ = {}
+# stroke = input()
+# for i, j in enumerate(stroke):
+#     dict_[j] = i + 1
+# print(dict_)
+# #3
+# stroke = input()
+# dict_ = {}
+# for symbol in stroke:
+#     if symbol not in dict_:
+#         dict_[symbol] = 1
+#     else:
+#         dict_[symbol] += 1
+# print(dict_)
+# #5
+# dic1 = {
+#     'a': 1,
+#     'b': 2,
+#     'c': 3
+# }
+# dic2 = {
+#     'd': 4,
+#     'e': 5
+# }
+# dic3 = {
+#     'f': 6
+# }
+# def decs(dic1,dic2,dic3,dic4):
+#     if dic1 != {}:
+#         for x, y in dic1.items():
+#             dic4[x] = y
+#         dic1 = {}
+#         return decs(dic1,dic2,dic3,dic4)
+#     if dic2 != {}:
+#         for x, y in dic2.items():
+#             dic4[x] = y
+#         dic2 = {}
+#         return decs(dic1,dic2,dic3,dic4)
+#     if dic3 != {}:
+#         for x, y in dic3.items():
+#             dic4[x] = y
+#         dic3 = {}
+#         return decs(dic1,dic2,dic3,dic4)
+#     return dic4
+# print(decs(dic1, dic2, dic3, {}))
+# #6
+# from functools import reduce
+# dict_ = {'a': 1, 'b': 2, 'c': 3}
+# summary = reduce(lambda x, y: x + y, dict_.values())
+# print(summary)
+# #7
+# from functools import reduce
+# dict_ = {'a': 1, 'b': 2, 'c': 4}
+# summary = reduce(lambda x, y: x * y, dict_.values())
+# print(summary)
+# #8
+# stroke = ''
+# dict_ = {'a': 1, 'b': 2, 'c': 4}
+# for i, j in dict_.items():
+#     stroke += i*j
+# print(stroke)
+# #11
+# spisok = [1,2,3,4,1,2,3,43,2,3,2,3,2,1,45,6,7,2,1,5]
+# print(sorted(set(spisok)))
+# #11.3
+# stroke = input()
+# dict_ = {}
+# for symbol in stroke:
+#     if symbol not in dict_:
+#         dict_[symbol] = 1
+#     else:
+#         dict_[symbol] += 1
+# def delete(dict_):
+#     for i, j in dict_.items():
+#         if j < 5:
+#             dict_.pop(i)
+#             return delete(dict_)
+#     return dict_
+# print(delete(dict_))
+# #11.2
+# spisok = [[5,7,66],[44,35,2,5,6],[101,102,103,4,6,324,2,45,36]]
+# def operation(nums):
+#     if len(spisok) != 0:
+#         nums.append((spisok[0])[0])
+#         nums.append((spisok[0])[-1])
+#         del spisok[0]
+#         return operation(nums)
+#     return nums
+# print(operation([]))
