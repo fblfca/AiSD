@@ -1,0 +1,111 @@
+# #1
+# example = [0, 1, 2, 3, 4]
+# output = ' '.join([str(next(iter(example[num:]))) for num in range(len(example))])
+# print(output)
+# #2
+# def geom(gip, catet1):
+#     return (gip ** 2 - catet1 ** 2) ** 0.5
+# def check_correctness(gip, catet1):
+#     if gip <= 0 or catet1 <= 0:
+#         return False
+#     if gip <= catet1:
+#         return False
+#     if geom(gip, catet1) > gip:
+#         return False
+#     return True
+# def operation():
+#     nums = input('Введите длины гипотенузы, затем катета через пробел:')
+#     gip = int(nums[:nums.index(' ')])
+#     catet1 = int(nums[nums.index(' ')+1:])
+#     if not check_correctness(gip, catet1):
+#         print('Для заданных значений не существует прямоугольного треугольника')
+#         return operation()
+#     return geom(gip, catet1)
+# print(operation())
+# #2-3
+# def geom(gip, catet1):
+#     return f'Длина второго катета равна: {(gip ** 2 - catet1 ** 2) ** 0.5}'
+# def operation():
+#     nums = input('Введите длины гипотенузы, затем катета через пробел:')
+#     try:
+#         gip = int(nums[:nums.index(' ')])
+#         catet1 = int(nums[nums.index(' ')+1:])
+#         if type(geom(gip,catet1)) is complex or geom(gip,catet1) == 0.0:
+#             return operation()
+#         return geom(gip, catet1)
+#     except:
+#         print('Для заданных значений не существует прямоугольного треугольника')
+#         return operation()
+# print(operation())
+# #4
+# name = input('Введите название файла:')
+# try:
+#     with open ((r'C:/Users/Maksim-Book/Desktop/' + name + '.txt').replace('/','\\'),encoding = 'utf-8') as file:
+#         for row in file:
+#             print(row)
+#             break
+# except:
+#     print('неверно введено название файла')
+# #1
+# with open (r'C:\Users\Maksim-Book\Desktop\example.txt','w+') as file:
+#     strokes = int(input('Введите количество строк в новом файле:'))
+#     for stroke in range(strokes):
+#         text = input(f'Введите строку номер {stroke+1}:')
+#         file.write(text + '\n')
+#     file.close()
+# with open (r'C:\Users\Maksim-Book\Desktop\example.txt') as file:
+#     for stroke in file.readlines():
+#         print(stroke)
+# #2
+# with open (r'C:\Users\Maksim-Book\Desktop\num2.txt') as file:
+#     amount = int(input('Введите число строк, которое хотите вывести\nЕсли хотите вывести все строки, нажмите 0:'))
+#     strokes = file.readlines()
+#     if amount == 0:
+#         for stroke in file:
+#             print(stroke)
+#     else:
+#         for counter in range(amount):
+#             print(strokes[counter])
+# #3
+# import re
+# with open (r'C:\Users\Maksim-Book\Desktop\num3.txt') as file:
+#     strokes = file.readlines()
+#     dictionary = {}
+# for stroke in strokes:
+#     words = re.findall(r'\b[a-zA-Z]+\b',stroke)
+#     for word in words:
+#         if word not in dictionary:
+#             dictionary[word] = 1
+#         else:
+#             dictionary[word] += 1
+# print(dictionary)
+# #5
+# import re
+# dictionary = {}
+# with open (r'C:\Users\Maksim-Book\Desktop\num5.1.txt') as file:
+#     strokes = file.readlines()
+# with open (r'C:\Users\Maksim-Book\Desktop\num5.2.txt') as file:
+#     strokes.extend(file.readlines())
+# with open (r'C:\Users\Maksim-Book\Desktop\num5.3.txt') as file:
+#     strokes.extend(file.readlines())
+# for stroke in strokes:
+#     words = re.findall(r'\b[a-zA-Z]+\b',stroke)
+#     for word in words:
+#         if word not in dictionary:
+#             dictionary[word] = 1
+#         else:
+#             dictionary[word] += 1
+# sorted_dictionary = dict(sorted(dictionary.items(),key=lambda item: item[1],reverse = True))
+# with open (r'C:\Users\Maksim-Book\Desktop\words_frequency.txt','w+') as file:
+#     for x, y in sorted_dictionary.items():
+#         file.write(f'Слово {x} встретилось {y} раз\n')
+#6
+# import openpyxl
+# book = openpyxl.open (r'C:\Users\Maksim-Book\Desktop\num7.xlsx',read_only = True)
+# sheet = book.active
+# cells = sheet ['A2':'E6']
+# info = []
+# for name, surname, university, city, country in cells:
+#     person = list((name.value, surname.value, university.value, city.value, country.value))
+#     info.append(person)
+# print(info)
